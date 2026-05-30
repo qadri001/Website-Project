@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PK Mart | Premium Store</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div id="landing-page" class="auth-container">
+        <div id="login-card" class="auth-card">
+            <h1 class="logo-text">PK <span class="gold-text">MART</span></h1>
+            <p>Welcome Back</p>
+            <form id="login-form">
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit" class="btn-gold">Login</button>
+            </form>
+            <p>New here? <button class="link-btn" onclick="toggleAuth()">Create Account</button></p>
+        </div>
+
+        <div id="signup-card" class="auth-card hidden">
+            <h1 class="logo-text">PK <span class="gold-text">MART</span></h1>
+            <p>Create Your Account</p>
+            <form id="signup-form">
+                <input type="text" placeholder="Full Name" required>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit" class="btn-gold">Sign Up</button>
+            </form>
+            <p>Already have an account? <button class="link-btn" onclick="toggleAuth()">Login</button></p>
+        </div>
+    </div>
+
+    <div id="store-page" class="hidden">
+        <nav class="navbar">
+            <h2 class="logo-text">PK <span class="gold-text">MART</span></h2>
+            <div class="nav-right">
+                <button id="cart-btn" class="icon-btn">🛒 <span id="cart-count">0</span></button>
+                <button id="logout-btn" class="btn-logout">Logout</button>
+            </div>
+        </nav>
+        <div class="hero"><h1>Our Premium Collection</h1></div>
+        <div id="product-list" class="container"></div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
